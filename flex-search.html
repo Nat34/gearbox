@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link href="css/dashboard.css" rel="stylesheet">
+  <!-- Favicon -->
+  <link href="https://www.footlocker.com/built/69/app/images/FL/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <!--TITLE-->
+  <title>Site Operations Gearbox</title>
+<body>
+  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Site Operations Gearbox</a>
+  </nav>
+  <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>Gearbox<span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="flex-search.html">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Product Search Generator
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Flex Search Generator
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Product Search Generator</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+            </div>
+          </div>
+          <form>
+            <!--ProductSKU-->
+            <div class="form-group mb-3">
+              <label for="productSkus">SKUs</label>
+              <div class="input-group" style="width: 20%;">
+                <textarea class="form-control" name="productSkus"></textarea>
+              </div>
+              <small class="form-text text-muted">Separate by comma(no spaces) with single quotes: 'DV5057NO','FKL05721'</small>
+            </div>
+            <!--Submit-->
+            <div class="form-group form-group-submit mb-3">
+              <button type="submit" class="btn btn-primary">Generate</button>
+            </div>
+          </form>
+        </main>
+      </div>
+    </div>
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script>
+let query = {
+  select: "select {paa2.onlineDate} as styleOnline,{paa2.offlineDate} as styleOffline,{paa.onlineDate} as sizeOnline,{paa.offlineDate} as sizeOffline,{ca.pk},{ct.code},{sz.sku},{sz.size},{sz.code}, {ca.display}, {ca.realTimeDCInventory},{ca.sizeAvailableInstores}, {ca.bossFulfilled}, {ca.singleStoreInventory}, {st.launchProduct}, {st.skuLaunchDate},{st.pdpActivationDate} ,{sz.pk},{st.pk},{paa.pk},{paa2.pk},{ct.pk},{pag.pk} from {SizeVariantProduct as sz join StyleVariantProduct! as st on {sz.baseProduct}={st.pk} join ContextualAttributeValue as ca on {ca.product}={sz.pk} join ContextualAttributesContext as ct on {ca.context}={ct.pk} join ProductAvailabilityAssignment as paa on {paa.product}={sz.pk} join ProductAvailabilityAssignment as paa2 on {paa2.product}={st.pk} join ProductAvailabilityGroup as pag on ({pag.pk}={paa.availabilityGroup} and {pag.pk}={paa2.availabilityGroup}) join BaseStore as s on {s.contextualAttributesContext}={ct.pk} join ProductAvailabilityGroup2BaseStoreRel as ",
+  where: function() {
+    return "paabsr on ({paabsr.target}={s.pk} and {paabsr.source}={pag.pk}) } where {st.sku} IN ("+ this.productSku +") and {sz.catalogversion}=({{ select {cv.pk} from { CatalogVersion as cv join Catalog as c on {cv.catalog}={c.pk}} where {c.id}='flProductCatalog' and {cv.version}='Online' }}) and {sz.catalogversion} = {ca.catalogversion} and {sz.catalogversion} = {st.catalogversion} and {sz.catalogversion} = {paa.catalogversion} and {sz.catalogversion} = {paa2.catalogversion} order by {ct.code},{sz.sku},{sz.size}";
+  },
+
+};
+
+function buildQueryTextBox(string) {
+  return '<div class="card mb-3"><div class="card-body">'+ string +'</div></div>';
+}
+
+function buildQuery(fields) {
+  query.productSku = processLevel(fields[0].value);
+
+  let qString = query.select +
+    query.where();
+
+  return qString;
+}
+
+function processLevel(values) {
+  if (typeof values !== "undefined") {
+    let valuesArrayToString = values.split(",");
+    return valuesArrayToString.join();
+  } else {
+    return null;
+  }
+
+}
+
+/*
+0: {name: "productStatus", value: "offline"}
+1: {name: "productLevel", value: "style"}
+2: {name: "productSizes", value: ""}
+3: {name: "productSkus", value: ""}
+4: {name: "productBanner", value: "ChAg"}
+*/
+
+$( "form" ).submit(function( event ) {
+  let fields = $( this ).serializeArray();
+  console.log(fields);
+  let queryString = buildQuery(fields);
+  let textBox = buildQueryTextBox(queryString);
+  $( ".form-group-submit" ).after(textBox);
+  event.preventDefault();
+});
+</script>
+</body>
+</html>

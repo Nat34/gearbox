@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <!-- Custom styles for this template -->
+  <link href="css/dashboard.css" rel="stylesheet">
+  <!-- Favicon -->
+  <link href="https://www.footlocker.com/built/69/app/images/FL/favicon.png" rel="shortcut icon" type="image/x-icon">
+  <!--TITLE-->
+  <title>Site Operations Gearbox</title>
+<body>
+  <nav class="navbar navbar-dark fixed-top bg-dark flex-md-nowrap p-0 shadow">
+    <a class="navbar-brand col-sm-3 col-md-2 mr-0" href="#">Site Operations Gearbox</a>
+  </nav>
+  <div class="container-fluid">
+      <div class="row">
+        <nav class="col-md-2 d-none d-md-block bg-light sidebar">
+          <div class="sidebar-sticky">
+            <ul class="nav flex-column">
+              <li class="nav-item">
+                <a class="nav-link active" href="index.html">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>Gearbox<span class="sr-only">(current)</span>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="flex-search.html">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Product Search Generator
+                </a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-layers"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>Flex Search Generator
+                </a>
+              </li>
+            </ul>
+          </div>
+        </nav>
+        <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+          <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
+            <h1 class="h2">Flex Search Generator</h1>
+            <div class="btn-toolbar mb-2 mb-md-0">
+              <div class="btn-group mr-2">
+                <button class="btn btn-sm btn-outline-secondary">Share</button>
+                <button class="btn btn-sm btn-outline-secondary">Export</button>
+              </div>
+            </div>
+          </div>
+          <form>
+            <div class="form-row productControl">
+              <!--ProductStatus-->
+            <div class="col">
+            <div class="form-group mb-3">
+              <label for="productStatus">Product Status</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="productStatus" id="productStatusOffline" value="offline" checked="">
+                <label class="form-check-label" for="productStatusOffline">
+                    Offline
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="productStatus" id="productStatusOnline" value="online">
+                <label class="form-check-label" for="productStatusOnline">
+                    Online
+                </label>
+              </div>
+            </div>
+          </div>
+          <!--ProductLevel-->
+          <div class="col">
+            <div class="form-group mb-3">
+              <label for="productLevel">Product Level</label>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="productLevel" id="productLevelStyle" value="style" checked="">
+                <label class="form-check-label" for="productLevelStyle">
+                    Style
+                </label>
+              </div>
+              <div class="form-check">
+                <input class="form-check-input" type="radio" name="productLevel" id="productLevelSize" value="size">
+                <label class="form-check-label" for="productLevelSize">
+                    Size
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!--ProductLevelInput-->
+            <div class="form-group">
+              <label for="productSizes">
+                Sizes
+              </label>
+              <div class="input-group" style="width: 20%;">
+                <textarea class="form-control" name="productSizes"></textarea>
+              </div>
+              <small class="form-text text-muted">Separate by comma(no spaces) with single quotes: '04.0','05.0' Leave blank if selecting by Style.</small>
+              </div>
+            <!--ProductSKU-->
+            <div class="form-group mb-3">
+              <label for="productSkus">SKUs</label>
+              <div class="input-group" style="width: 20%;">
+                <textarea class="form-control" name="productSkus"></textarea>
+              </div>
+              <small class="form-text text-muted">Separate by comma(no spaces) with single quotes: 'DV5057NO','FKL05721'</small>
+            </div>
+            <!--ProductBanner-->
+            <div class="form-group mb-3" style="width: 20%;">
+              <label for="productBanner">Product Banner</label>
+            <select class="form-control form-control-sm" name="productBanner">
+              <option value="ChAg">Champs Sports</option>
+              <option value="EbAg">East Bay</option>
+              <option value="FsAg">Final Score</option>
+              <option value="FaAg">Foot Action</option>
+              <option value="FlAg">Foot Locker</option>
+              <option value="FlcAg">Foot Locker CA</option>
+              <option value="KflAg">Kids Foot Locker</option>
+              <option value="LflAg">Lady Foot Locker</option>
+              <option value="So2Ag">SIX:02</option>
+            </select>
+            </div>
+            <!--Submit-->
+            <div class="form-group form-group-submit mb-3">
+              <button type="submit" class="btn btn-primary">Generate</button>
+            </div>
+          </form>
+        </main>
+      </div>
+    </div>
+<!-- Scripts -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script>
+let query = {
+  select: function() {
+    return "SELECT concat(';',{paa.pk}) as \"UPDATE ProductAvailabilityAssignment;pk[unique=true];offlineDate[dateformat=MM/dd/yyyy,default='"+ this.offlineDate +"']\" ";
+  },
+  from: function() {
+    return "FROM {"+ this.productLevel +"variantproduct as p ";
+  },
+  joinAssignment: "JOIN ProductAvailabilityAssignment as paa on {paa.product}={p.pk} ",
+  joinGroup: "JOIN ProductAvailabilityGroup as pag on {pag.pk}={paa.availabilityGroup} } ",
+  where: "WHERE {pag.id} ",
+  inBanner: function() {
+    return "IN ('"+ this.productBanner +"') ";
+  },
+  andSku: "AND {p.sku} ",
+  inSku: function() {
+    return "IN ("+ this.productSku +") ";
+  },
+  andSize: "AND {p:size} ",
+  inSize: function() {
+    return "IN ('"+ this.productSize +"')";
+  }
+};
+
+function buildQueryTextBox(string) {
+  return '<div class="card mb-3"><div class="card-body">'+ string +'</div></div>';
+}
+
+function buildQuery(fields) {
+  query.offlineDate   = checkStatus(fields[0].value);
+  query.productLevel  = checkLevel(fields[1].value);
+  query.productSize   = processLevel(fields[2].value);
+  query.productSku    = processLevel(fields[3].value);
+  query.productBanner = fields[4].value;
+
+  let qString = query.select() +
+    query.from() +
+    query.joinAssignment +
+    query.joinGroup +
+    query.where +
+    query.inBanner() +
+    query.andSku +
+    query.inSku();
+
+  if (query.productSize != '') {
+    qString += query.andSize + query.inSize();
+  }
+
+  return qString;
+}
+
+function checkStatus(status) {
+  return (status == 'offline' ? "01/01/2009" : "");
+}
+
+function checkLevel(level) {
+  return (level == 'style' ? "style" : "size");
+}
+
+function processLevel(values) {
+  if (typeof values !== "undefined") {
+    let valuesArrayToString = values.split(",");
+    return valuesArrayToString.join();
+  } else {
+    return null;
+  }
+
+}
+
+/*
+0: {name: "productStatus", value: "offline"}
+1: {name: "productLevel", value: "style"}
+2: {name: "productSizes", value: ""}
+3: {name: "productSkus", value: ""}
+4: {name: "productBanner", value: "ChAg"}
+*/
+
+$( "form" ).submit(function( event ) {
+  let fields = $( this ).serializeArray();
+  let queryString = buildQuery(fields);
+  let textBox = buildQueryTextBox(queryString);
+  $( ".form-group-submit" ).after(textBox);
+  event.preventDefault();
+});
+</script>
+</body>
+</html>
