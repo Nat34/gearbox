@@ -103,6 +103,12 @@ body {
   box-shadow: 0 0 0 3px rgba(255, 255, 255, .25);
 }
 
-form .productControl .col {
-  max-width: 11%;
+form {
+  width: 50%;
+}
+
+@media only screen and (max-width: 1024px) {
+  form {
+    width: 100%;
+  }
 }
